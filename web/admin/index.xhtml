@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>BookSmurf Admin</title>
+        <h:outputStylesheet name="css/style.css" library="default"/>
+    </h:head>
+    <h:body>
+        <h:form id="frm-customers">
+            
+        <h:panelGrid columns="3"
+            width="auto">
+            <f:facet name="header">
+                <h:outputText value="#{frm_msg.tbl_header1}"/>
+            </f:facet>
+            <h:outputLabel for="firstName" value="#{frm_msg.tbl_fname}"/>
+            <h:inputText id="firstName" 
+                         value="#{authorService.author.firstName}" 
+                         label="FirstName" 
+                         required="true" 
+                         requiredMessage="First Name required"/>
+            <h:message for="firstName" styleClass="error"/>
+            <h:outputLabel for="lastName" value="#{frm_msg.tbl_lname}"/>
+            <h:inputText id="lastName" 
+                         value="#{authorService.author.lastName}" 
+                         label="LastName" 
+                         required="true" 
+                         requiredMessage="Last Name required"/>
+            <h:message for="lastName" styleClass="error"/>
+            <h:outputLabel for="emailAddr" value="#{frm_msg.tbl_email}"/>
+            <h:inputText id="emailAddr" 
+                         value="#{authorService.author.email}" 
+                         label="Email Address" 
+                         required="true" 
+                         requiredMessage="Email required"/>
+            <h:message for="emailAddr" styleClass="error"/>
+            <h:outputLabel for="phoneNum" value="#{frm_msg.tbl_phone}"/>
+            <h:inputText id="phoneNum" 
+                         value="#{authorService.author.phone}" 
+                         label="Phone Number" 
+                         required="true" 
+                         requiredMessage="Phone Number required"/>
+            <h:message for="phoneNum" styleClass="error"/>
+            <h:inputHidden/>
+            <h:panelGroup layout="span">
+                <h:button id="cancelRec" value=""/>
+                <h:commandButton action="#{authorService.createNewAuthor()}"
+                                 value="Create"/>
+            </h:panelGroup>
+        </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
