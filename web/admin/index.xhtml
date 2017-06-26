@@ -43,6 +43,28 @@
                          required="true" 
                          requiredMessage="Phone Number required"/>
             <h:message for="phoneNum" styleClass="error"/>
+            <h:outputLabel for="gender" value="#{frm_msg.gender}"/>
+            <h:selectOneMenu id="gender"
+                             value="#{authorService.author.gender}"
+                             required="true"
+                             requiredMessage="#{frm_msg.gender_req}">
+<!--                <f:selectItem itemValue="Male" itemLabel="Male"/>
+                <f:selectItem itemValue="Female" itemLabel="Female"/>
+                <f:selectItem itemValue="Bisexual" itemLabel="Bisexual"/>
+                <f:selectItem itemValue="Transgender" itemLabel="Transgender"/>
+                <f:selectItem itemValue="Other" itemLabel="Other"/>-->
+                <f:selectItems value="#{lists.genderOptions}"/>
+            </h:selectOneMenu>
+            <h:message for="gender" styleClass="error"/>
+                           
+            <h:inputHidden/>
+            <h:panelGroup>
+            <h:selectBooleanCheckbox 
+                        id="subscr_email" 
+                        rendered="true"
+                         value="#{authorService.author.isSubscribed}"/>
+            <h:outputLabel for="subscr_email" value="#{frm_msg.email_subscr}"/>
+            </h:panelGroup>
             <h:inputHidden/>
             <h:panelGroup layout="span">
                 <h:button id="cancelRec" value=""/>
