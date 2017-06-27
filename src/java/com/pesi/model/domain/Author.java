@@ -21,7 +21,7 @@ public class Author {
     private String address;
     private String email;
     private String phone;
-    private boolean isSubscribed;
+    private boolean wantsSubscription;
     private String gender;
 
     public String getFirstName() {
@@ -64,12 +64,12 @@ public class Author {
         this.phone = phone;
     }
 
-    public boolean isIsSubscribed() {
-        return isSubscribed;
+    public boolean isWantsSubscription() {
+        return wantsSubscription;
     }
 
-    public void setIsSubscribed(boolean isSubscribed) {
-        this.isSubscribed = isSubscribed;
+    public void setWantsSubscription(boolean status) {
+        this.wantsSubscription = status;
     }
 
     public String getGender() {

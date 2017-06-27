@@ -57,20 +57,20 @@
             </h:selectOneMenu>
             <h:message for="gender" styleClass="error"/>
                            
-            <h:inputHidden/>
+            <h:outputLabel for="subscr_email" value="#{frm_msg.newsletter_sub}"/>
             <h:panelGroup>
+                
             <h:selectBooleanCheckbox 
                         id="subscr_email" 
                         rendered="true"
-                         value="#{authorService.author.isSubscribed}"/>
-            <h:outputLabel for="subscr_email" value="#{frm_msg.email_subscr}"/>
+                        value="#{authorService.author.wantsSubscription}"/>
+            <h:outputLabel for="subscr_email" value="#{frm_msg.newsletter_msg}"/>
             </h:panelGroup>
             <h:inputHidden/>
-            <h:panelGroup layout="span">
-                <h:button id="cancelRec" value=""/>
-                <h:commandButton action="#{authorService.createNewAuthor()}"
+            <!--<h:panelGroup layout="span">-->
+                <h:commandButton style="float: right;" action="#{authorService.createNewAuthor()}"
                                  value="Create"/>
-            </h:panelGroup>
+            <!--</h:panelGroup>-->
         </h:panelGrid>
         </h:form>
     </h:body>

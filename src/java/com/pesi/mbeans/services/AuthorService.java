@@ -7,16 +7,17 @@
 package com.pesi.mbeans.services;
 
 import com.pesi.model.domain.Author;
+import java.io.Serializable;
 import javax.inject.Named;
-import javax.enterprise.context.Dependent;
+import javax.enterprise.context.SessionScoped;
 
 /**
  *
  * @author kelly
  */
 @Named(value = "authorService")
-@Dependent
-public class AuthorService {
+@SessionScoped
+public class AuthorService implements Serializable{
 
     private Author author;
     /**
@@ -34,8 +35,8 @@ public class AuthorService {
         this.author = author;
     }
 
-    public void createNewAuthor(){
-        
+    public String createNewAuthor(){
+        return "summary";
     }
     
     
